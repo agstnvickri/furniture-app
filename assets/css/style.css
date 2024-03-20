@@ -4,7 +4,7 @@
       --color-dark: #323232;
       --color-light: #fff;
 
-      --font-primary: 'Merriweather', sans-serif;
+      --font-primary: 'Merriweather', serif;
       --font-secondary: "Open Sans", sans-serif;
 }
 
@@ -34,11 +34,20 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+* {
+      box-sizing: border-box;
+}
 body {
-	line-height: 1;
+	line-height: 150%;
+      font-family: var(--font-secondary);
+      color: var(--color-dark);
 }
 ol, ul {
 	list-style: none;
+}
+a {
+      text-decoration: none;
+      display: block;
 }
 blockquote, q {
 	quotes: none;
@@ -54,3 +63,93 @@ table {
 }
 
 /* general style css */
+nav {
+      width: 100vw;
+      background: var(--color-primary);
+}
+.container {
+      max-width: 85.375rem;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+}
+.wrapper {
+      width: inherit;
+      display: flex;
+}
+.menu-item,
+.brand {
+      font-family: var(--font-primary);
+}
+.menu-item {
+      font-size: 1.125rem;
+}
+.brand {
+      font-size: 1.5rem;
+}
+
+
+/* navbar */
+#navbar {
+      padding: 2rem 0 1.5rem;
+}
+#navbar .wrapper {
+      justify-content: space-between;
+      align-items: center;
+}
+#navbar .navigation {
+      display: flex;
+      gap: 4.688rem;
+      align-items: center;
+}
+#navbar .brand {
+      text-transform: uppercase;
+      user-select: none;
+}
+#navbar .brand span {
+      color: var(--color-secondary);
+}
+#navbar .menu-item {
+      display: block;
+      padding: 0.5rem;
+      transition-duration:.3s;
+}
+#navbar .menu-item:hover {
+      color: var(--color-secondary);
+}
+#navbar .toggle {
+      display: none;
+}
+#navbar .navigation-icon,
+#navbar .navigation-menu {
+      display: flex;
+      gap: 3rem;
+}
+#navbar .menu-toggle,
+#navbar .menu-item,
+#navbar .brand {
+      color: var(--color-light);
+}
+
+/* desktop */
+@media screen and (max-width: 1440px) {
+      html {
+            font-size: 85%;
+      }
+      .container {
+            padding-inline: 5%;
+      }
+}
+
+/* full HD */
+@media screen and (max-width: 1024px) {
+      html {
+            font-size: 80%;
+      }
+      #navbar .navigation-icon,
+      #navbar .navigation-menu {
+            display: flex;
+            gap: 1rem;
+      }
+}
