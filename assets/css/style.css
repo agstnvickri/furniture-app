@@ -37,10 +37,14 @@ footer, header, hgroup, menu, nav, section {
 * {
       box-sizing: border-box;
 }
+html {
+      scroll-behavior: smooth;
+}
 body {
-	line-height: 150%;
+	line-height: 185%;
       font-family: var(--font-secondary);
       color: var(--color-dark);
+      overflow-x: hidden;
 }
 ol, ul {
 	list-style: none;
@@ -60,96 +64,470 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+      
 }
-
-/* general style css */
-nav {
+/* generall style css */
+header {
       width: 100vw;
       background: var(--color-primary);
+      margin-bottom: 9.25rem;
+}
+section,
+nav {
+      width: inherit;
 }
 .container {
-      max-width: 85.375rem;
-      width: 100%;
+      padding: 0 15%;
       margin: 0 auto;
+      max-width: 120rem;
+      width: 100%;
       display: flex;
       flex-direction: column;
+      gap: 6.25rem;
 }
 .wrapper {
       width: inherit;
       display: flex;
+      flex-wrap: wrap;
 }
-.menu-item,
+.form-label,
+.card-price,
+.card-title,
+.title,
+.btn,
+.headline,
 .brand {
       font-family: var(--font-primary);
+      line-height: 145%;
+      user-select: none;
 }
 .menu-item {
       font-size: 1.125rem;
 }
-.brand {
-      font-size: 1.5rem;
+section {
+      padding: 6.25rem 0;
 }
-
-
+.panel-info,
+.info {
+      flex-direction: column;
+      display: flex;
+}
+img {
+      width: 100%;
+}
+.btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: .5rem;
+      transition-duration: .3s;
+      border-radius: .313rem;
+}
+.btn-ternary {
+      background: transparent;
+      border-color: var(--color-secondary);
+      color: var(--color-secondary);
+}
+.btn-lg {
+      padding: 1.5rem 3rem;
+      font-size: 1.125rem;
+}
+.btn-sm {
+      padding: .85rem 1.5rem;
+      font-size: 1rem;
+}
+.cta {
+      display: flex;
+      gap: 1rem;
+}
+.heading {
+      width: inherit;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+}
+.panel {
+      width: inherit;
+      border-radius: .313rem;
+      background: var(--color-primary);
+      display: flex;
+      flex-wrap: wrap;
+}
+.product-arrival,
+.product-populer {
+      width: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 3.25rem;
+}
+.product-title {
+      width: inherit;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+}
+.product-cards {
+      width: inherit;
+      display: flex;
+      flex-wrap: wrap;
+}
+.card {
+      width: inherit;
+      display: flex;
+      flex-wrap: wrap;
+}
+.form {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.15rem;
+}
+.form-group {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+}
+.form-control {
+      width: inherit;
+}
+.form-label {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: .75rem;
+}
+.form-control {
+      padding: 1rem;
+      background: #d9d9d9;
+      outline: none;
+      border: none;
+}
 /* navbar */
 #navbar {
-      padding: 2rem 0 1.5rem;
+      padding: 1.5rem 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1;
 }
 #navbar .wrapper {
       justify-content: space-between;
       align-items: center;
 }
-#navbar .navigation {
+#navbar .menu-icon,
+#navbar .menu-link,
+#navbar .menu {
       display: flex;
-      gap: 4.688rem;
       align-items: center;
 }
-#navbar .brand {
-      text-transform: uppercase;
-      user-select: none;
+#navbar .menu {
+      gap: 5rem;
 }
-#navbar .brand span {
-      color: var(--color-secondary);
-}
-#navbar .menu-item {
-      display: block;
-      padding: 0.5rem;
-      transition-duration:.3s;
-}
-#navbar .menu-item:hover {
-      color: var(--color-secondary);
-}
-#navbar .toggle {
-      display: none;
-}
-#navbar .navigation-icon,
-#navbar .navigation-menu {
-      display: flex;
+#navbar .menu-link,
+#navbar .menu-icon {
       gap: 3rem;
 }
-#navbar .menu-toggle,
 #navbar .menu-item,
+#footer .brand,
 #navbar .brand {
       color: var(--color-light);
 }
-
-/* desktop */
-@media screen and (max-width: 1440px) {
-      html {
-            font-size: 85%;
-      }
-      .container {
-            padding-inline: 5%;
-      }
+#footer .brand,
+#navbar .brand {
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+}
+#navbar .menu-item {
+      font-family: var(--font-primary);
+      transition-duration: .3s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+#footer .menu-item:hover,
+#footer .brand span,
+#navbar .brand span,
+#navbar .menu-item:hover {
+      color: var(--color-secondary);
+}
+#navbar .menu-icon #menu-toggle {
+      display: none;
 }
 
-/* full HD */
-@media screen and (max-width: 1024px) {
-      html {
-            font-size: 80%;
-      }
-      #navbar .navigation-icon,
-      #navbar .navigation-menu {
-            display: flex;
-            gap: 1rem;
-      }
+/* hero */
+section#hero {
+      padding: 14.5rem 0 3rem;
+}
+#hero .info {
+      width: 45%;
+}
+#hero .display {
+      width: 55%;
+      height: 22.313rem;
+      position: relative;
+}
+#hero .headline {
+      color: var(--color-secondary);
+      font-size: 2.875rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+}
+#hero .subheadline {
+      color: var(--color-light);
+      font-size: 1.25rem;
+}
+#banner .panel .cta,
+#service .panel .cta,
+#hero .cta {
+      margin-top: auto;
+}
+#hero img {
+      position: absolute;
+      right: 0;
+}
+#hero img:nth-child(1) {
+      top: 40%;
+}
+#hero img:nth-child(2) {
+      width: 8.25rem;
+      height: 8.25rem;
+      top: -10%;
+}
+
+/* service */
+#contact .heading .title,
+#blog .heading .title,
+#product .heading .title,
+#service .heading .title {
+      font-size: 1.875rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+}
+#contact .heading .subtitle,
+#blog .heading .subtitle,
+#product .heading .subtitle,
+#service .heading .subtitle {
+      font-size: 1.125rem;
+}
+#blog .wrapper,
+#service .wrapper {
+      justify-content: space-between;
+}
+#service .panel {
+      padding: 1.5rem;
+      margin-bottom: 2.5rem;
+      max-width: 26.5rem;
+      justify-content: space-between;
+}
+#service .panel .panel-info {
+      width: 50%;
+}
+#service .panel .subtitle, 
+#service .panel .title {
+      color: var(--color-light);
+}
+#service .panel .title {
+      font-size: 1.625rem;
+}
+#service .panel .subtitle {
+      margin-bottom: .5rem;
+}
+#service .panel img {
+      height: 11.25rem;
+}
+
+#banner .panel {
+      padding: 3rem 6.25rem;
+      overflow-y: hidden;
+}
+#banner .panel .panel-info {
+      width: 50%;
+}
+#banner .panel .panel-display {
+      width: 50%;
+      height: 12.5rem;
+      position: relative;
+}
+#banner .panel .title,
+#banner .panel .subtitle {
+      color: var(--color-light);
+}
+#banner .panel .title {
+      font-size: 2.125rem;
+      font-weight: 700;
+}
+#banner .panel .subtitle {
+      font-family: var(--font-primary);
+      font-size: 1.25rem;
+      margin-bottom: .5rem;
+}
+#banner .panel img {
+      position: absolute;
+      top: 20%;
+      right: 0;
+}
+
+#product .product-title .title {
+      font-size: 1.5rem;
+      font-weight: 700;
+}
+#product .product-title .cta {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+}
+#product .product-arrival .product-cards,
+#product .product-populer .product-cards {
+      justify-content: space-between;
+}
+#blog .card,
+#product .product-arrival .card,
+#product .product-populer .card {
+      max-width: 18.938rem;
+      gap: 2.5rem;
+      margin-bottom: 1.5rem;
+}
+#product .product-arrival .card-info,
+#product .product-arrival .card-display,
+#product .product-populer .card-display,
+#product .product-populer .card-info {
+      width: inherit;
+}
+
+#product .product-arrival .card-display,
+#product .product-populer .card-display {
+      display: flex;
+      padding: 1.5rem;
+}
+#product .product-populer .card-display {
+      border: 1px solid var(--color-primary);
+}
+#product .product-arrival .card-info,
+#product .product-populer .card-info {
+      display: flex;
+      justify-content: space-between;
+}
+#product .card-display img {
+      height: 11.5rem;
+      object-fit: contain;
+}
+#product .card-info .card-label {
+      background: var(--color-primary);
+      color: var(--color-light);
+      text-align: center;
+}
+#product .card-info .card-stock {
+      margin-top: 1rem;
+}
+#product .card-info .card-cta,
+#product .card-info .card-cta {
+      display: flex;
+      align-items: end;
+}
+#product .product-arrival .card-display {
+      background: var(--color-primary);
+}
+#product .product-arrival .card-title {
+      margin-bottom: .5rem;
+      font-size: 1.125rem;
+      font-weuight: 700;
+}
+#product .product-arrival .card-rate {
+      margin-bottom: 2.5rem;
+      display: flex;
+      gap: .5rem;
+}
+#product .product-arrival .card-price {
+      font-size: 1.875rem;
+}
+#product .footer {
+      width: inherit;
+      display: flex; 
+      justify-content: center;
+      align-items: center;
+}
+#blog .card {
+      box-shadow: 1px 1px 3px rgba(0,0,0,.5);
+}
+#blog .card-info {
+      padding: 1.5rem 1rem;
+}
+#blog .card-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1.125rem;
+}
+#blog .card-label {
+      font-size: 1rem;
+      margin-bottom: .125rem;
+}
+#blog .cta {
+      margin-top: 2.5rem;
+}
+
+#contact .form,
+#contact .display {
+      width: 50%;
+}
+#contact .display img {
+      height: 35.125rem;
+}
+#contact .form textarea {
+      height: 11.5rem;
+}
+#contact .form .btn {
+      width: 100%;
+}
+
+#footer {
+      background: var(--color-primary);
+}
+#footer .wrapper {
+      justify-content: space-between;
+}
+#footer .contact {
+      width: 40%;
+}
+#footer .address,
+#footer .helpfull,
+#footer .information,
+#footer .service,
+#footer .contact {
+      display: flex;
+      flex-direction: column;
+}
+#footer .information,
+#footer .address,
+#footer .helpfull,
+#footer .service {
+      max-width: 9.875rem;
+      width: 100%;
+}
+#footer .contact .brand {
+      margin-bottom: 2.5rem;
+}
+#footer .title {
+      font-size: 1.25rem;
+      margin-bottom: 2.5rem;
+      color: var(--color-light);
+}
+#footer .text-body,
+#footer .menu-item {
+      color: var(--color-light);
+      opacity: .45;
+}
+#footer .menu-item {
+      margin-bottom: 1rem;
+      transition-duration: .3s;
+}
+#footer .menu-item:hover {
+      opacity: 1;
+}
+#footer .contact .text-body {
+      margin-bottom: 1.5rem;
+}
+#footer .contact .cta {
+      margin-top: 2.5rem;
 }
